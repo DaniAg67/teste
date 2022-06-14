@@ -1,0 +1,92 @@
+import telebot
+
+CHAVE_API = "5510563100:AAEyK4pBEzHn-KG80AvNzCsFdYPSr3fhD0E"
+
+bot = telebot.TeleBot(CHAVE_API)
+
+@bot.message_handler(commands=["verprevias"])
+def verprevias(mensagem):
+    bot.send_message(mensagem.chat.id, """Acesse o link a baixo para ver o nosso grupo de prévias 🔥
+
+Grupo = https://t.me/+z0z4L1Q4IQVjMzBh""")
+
+@bot.message_handler(commands=["planos"])
+def planos(mensagem):
+    bot.send_message(mensagem.chat.id, """ Selecione a baixo a quantidade de vídeos que você quer comprar, por enquanto temos apenas 3 quantidades disponíveis, em breve teremos mais planos...🔥
+
+/R15 = 1500 videos 🔥
+
+/R20 = 3000 videos 🔥
+
+/R30 = 5000 videos 🔥
+
+/verprevias = ver videos curtos de prévia 🔥 """)
+
+@bot.message_handler(commands=["suporte"])
+def suporte(mensagem):
+    bot.send_message(mensagem.chat.id, """ Tendo algum problema com o nosso bot? 
+
+Chame agora o nosso suporte do telegram e aguarde ser atendido @suportte01 🔥 """)
+
+
+@bot.message_handler(commands=["R15"])
+def R15(mensagem):
+    bot.send_message(mensagem.chat.id, """ Quer comprar 1500 vídeos? 🔥
+
+💰O valor é R$ 15,00💰
+
+Pagamento via Pix, assim que pagar é só mandar o comprovante para @vendass01 para o pagamento  ser verificado, depois é só aguardar para o recebimento dos vídeos...
+
+Chaves Pix
+
+💠PIX Celular: +55 85999795644
+
+💠PIX Copia E Cola: 00020101021126560014br.gov.bcb.pix0124danielfragaaso@gmail.com0206videos520400005303986540515.005802BR5925Joao Francisco Ribeiro...6009SAO PAULO62070503***6304CFF6 """)
+
+@bot.message_handler(commands=["R20"])
+def R20(mensagem):
+    bot.send_message(mensagem.chat.id, """ Quer comprar 3000 vídeos? 🔥
+
+💰O valor é R$ 20,00💰
+
+Pagamento via Pix, assim que pagar é só mandar o comprovante para @vendass01 para o pagamento  ser verificado, depois é só aguardar para o recebimento dos vídeos...
+
+Chaves Pix
+
+💠PIX Celular: +55 85999795644
+
+💠PIX Copia E Cola: 00020101021126560014br.gov.bcb.pix0124danielfragaaso@gmail.com0206videos520400005303986540520.005802BR5925Joao Francisco Ribeiro...6009SAO PAULO62070503***6304CF87 """)
+
+@bot.message_handler(commands=["R30"])
+def R30(mensagem):
+    bot.send_message(mensagem.chat.id, """ Quer comprar 5000 vídeos? 🔥
+
+💰O valor é R$ 30,00💰
+
+Pagamento via Pix, assim que pagar é só mandar o comprovante para @vendass01 para o pagamento  ser verificado, depois é só aguardar para o recebimento dos vídeos...
+
+Chaves Pix
+
+💠PIX Celular: +55 85999795644
+
+💠PIX Copia E Cola: 00020101021126560014br.gov.bcb.pix0124danielfragaaso@gmail.com0206videos520400005303986540530.005802BR5925Joao Francisco Ribeiro...6009SAO PAULO62070503***6304F570 """)
+
+
+
+
+
+def verificar(mensagem):
+    return True
+
+@bot.message_handler(func=verificar)
+def responder(mensagem):
+    texto = """Bem vindo ao melhor serviço de vendas de conteúdo ☪️P do telegram 🔥 (comandos a baixo)
+
+  /planos
+
+  /suporte"""
+    bot.reply_to(mensagem, texto)
+
+
+
+bot.polling()
